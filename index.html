@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Estructuras de control práctica</title>
+    <link href="img/Favicon.png" rel="icon">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            width: 100%;
+            height: 100%;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: rgb(230, 59, 59);
+            font-family: montserrat;
+        }
+
+        #resultado {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            font-size: 22px;
+            line-height: 1.6;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        let salida = "";
+
+        let calificacion = 6;
+
+        if (calificacion <= 6) {
+            salida += "Has reprobado D:<br>";
+        } else if (calificacion == 10) {
+            salida += "Wow, has sacado 10 :D<br>";
+        } else if (calificacion >= 7 && calificacion <= 9) {
+            salida += "Meh, saliste mediocre<br>";
+        } else {
+            salida += "Tú calificación no existe, wtf<br>"
+        }
+
+        for (let i = 10; i >= 1; i--) {
+            salida += "Morirás en: " + i + "<br>";
+        }
+        salida += "BOOM <br>";
+
+        let ruta = "limbo";
+
+        switch (ruta) {
+            case "vida":
+                salida += "Escogiste bien:)<br>";
+                break;
+
+            case "muerte":
+                salida += "Escogiste mal, has muerto de nuevo <br>";
+                salida += "BOOM <br>";
+                break;
+
+            case "limbo":
+                salida += "No sabes dónde estás, estás en un lugar que parece algo similar a tu vida, sin embargo, es más que eso. No puedes interactuar con nadie, no puedes sentir nada, sólo puedes deambular sin rumbo. <br>";
+                salida += "Todas tus acciones tienen consecuencias <br>";
+                break;
+
+            default:
+                salida += "No puedes escapar a la existencia<br>";
+        }
+
+        document.getElementById("resultado").innerHTML = salida;
+
+    </script>
+
+</body>
+
+</html>
